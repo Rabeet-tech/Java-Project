@@ -11,13 +11,13 @@ import com.chatapp.shared.utils.Config;
 public class Client {
 	public static void main(String[] args) {
 		
-		try {
-			Socket socket=new Socket(Config.HOST,Config.PORT);
+		try(Socket socket=new Socket(Config.HOST,Config.PORT);) {
+	
 			System.out.println("Successfully connected to server at "+Config.HOST);
-
+		
 		BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-		Scanner consoleInput = new Scanner(System.in);
+		Scanner consoleInput= new Scanner(System.in);
 
 	
 		while (true) {
