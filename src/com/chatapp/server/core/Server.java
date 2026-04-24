@@ -8,7 +8,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-import com.chatapp.config.Config;
+import com.chatapp.shared.utils.Config;
 
 public class Server {
     public static void main(String[] args) {
